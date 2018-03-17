@@ -10,7 +10,7 @@ export const parseName = (name: string, suffix: string) => {
         capitalize: _.upperFirst(_.camelCase(removeSufix(suffix, name)) + suffix),
         lowerCase: _.lowerCase(removeSufix(suffix, name)) + suffix,
         kebabCase: _.kebabCase(removeSufix(suffix, name)) + suffix,
-        pluralize: pluralize(_.kebabCase(removeSufix(suffix, name))) + suffix,
+        pluralize: pluralize(_.kebabCase(removeSufix(suffix, name))),
         normal: name + suffix,
     };
 };

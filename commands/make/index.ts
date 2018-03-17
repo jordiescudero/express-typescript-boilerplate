@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+import * as figlet from 'figlet';
 import * as glob from 'glob';
 import * as path from 'path';
 import * as prompts from 'prompts';
@@ -6,6 +8,8 @@ import { Maker } from './lib/Maker';
 import { scaffold } from './lib/scaffold';
 import { handleError, stopIfValueIsUndefined } from './lib/utils';
 
+console.log(chalk.blue(figlet.textSync('make')));
+console.log('');
 glob(path.join(__dirname, 'templates/*Maker.ts'), async (error: any, matches: string[]) => {
     if (error) {
         handleError(error);
@@ -26,7 +30,6 @@ glob(path.join(__dirname, 'templates/*Maker.ts'), async (error: any, matches: st
             value: m,
         })),
     });
-
     stopIfValueIsUndefined(response.value);
 
     try {

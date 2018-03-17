@@ -240,10 +240,7 @@ module.exports = {
          * Scaffold
          */
         make: {
-            script: series(
-                'nps banner.make',
-                runFast('./commands/make/index.ts')
-            ),
+            script: runFast('./commands/make/index.ts'),
             description: 'Generates new files with the given templates of the makers.'
         },
         /**
@@ -257,7 +254,6 @@ module.exports = {
             testE2E: banner('test.e2e'),
             migrate: banner('migrate'),
             seed: banner('seed'),
-            make: banner('make'),
             revert: banner('revert'),
             clean: banner('clean')
         }
