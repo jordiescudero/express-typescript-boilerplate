@@ -27,8 +27,6 @@
 
 <br />
 
-![divider](./w3tec-divider.png)
-
 ## ❯ Why
 
 Our main goal with this project is a feature complete server application.
