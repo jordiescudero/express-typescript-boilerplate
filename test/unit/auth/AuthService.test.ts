@@ -46,16 +46,16 @@ describe('AuthService', () => {
         });
     });
 
-    describe('getTokenInfo', () => {
-        test('Should get the tokeninfo', async (done) => {
+    describe('getUserInfo', () => {
+        test('Should get the userInfo', async (done) => {
             nock(env.auth.route)
                 .post('')
                 .reply(200, {
                     user_id: 'auth0|test@test.com',
                 });
 
-            const tokeninfo = await authService.getTokenInfo('1234');
-            expect(tokeninfo.user_id).toBe('auth0|test@test.com');
+            const userInfo = await authService.getUserInfo('1234');
+            expect(userInfo.sub).toBe('auth0|test@test.com');
             done();
         });
 
@@ -65,7 +65,7 @@ describe('AuthService', () => {
                 .reply(401, 'Invalid token');
 
             try {
-                await authService.getTokenInfo('1234');
+                await authService.getUserInfo('1234');
             } catch (error) {
                 expect(error).toBe('Invalid token');
             }

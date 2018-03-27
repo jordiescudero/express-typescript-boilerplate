@@ -16,16 +16,16 @@ export function authorizationChecker(connection: Connection): (action: Action, r
         // checker must return either boolean (true or false)
         // either promise that resolves a boolean value
         // demo code:
-        const token = authService.parseTokenFromRequest(action.request);
+        const accessToken = authService.parseTokenFromRequest(action.request);
 
-        if (token === undefined) {
-            log.warn('No token given');
+        if (accessToken === undefined) {
+            log.warn('No accessToken given');
             return false;
         }
 
-        // Request user info at auth0 with the provided token
+        // Request user info at auth0 with the provided accessToken
         try {
-            action.request.tokeninfo = await authService.getTokenInfo(token);
+            action.request.userInfo = await authService.getUserInfo(accessToken);
             log.info('Successfully checked token');
             return true;
         } catch (e) {

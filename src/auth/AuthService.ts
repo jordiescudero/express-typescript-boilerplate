@@ -4,7 +4,7 @@ import { Require, Service } from 'typedi';
 
 import { Logger, LoggerInterface } from '../decorators/Logger';
 import { env } from '../env';
-import { TokenInfoInterface } from './TokenInfoInterface';
+import { UserInfoInterface } from './UserInfoInterface';
 
 @Service()
 export class AuthService {
@@ -31,21 +31,21 @@ export class AuthService {
         return undefined;
     }
 
-    public getTokenInfo(token: string): Promise<TokenInfoInterface> {
+    public getUserInfo(accessToken: string): Promise<UserInfoInterface> {
         return new Promise((resolve, reject) => {
             this.httpRequest({
-                method: 'POST',
+                method: 'GET',
                 url: env.auth.route,
-                form: {
-                    id_token: token,
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
                 },
             }, (error: any, response: request.RequestResponse, body: any) => {
                 // Verify if the requests was successful and append user
                 // information to our extended express request object
                 if (!error) {
                     if (response.statusCode === 200) {
-                        const tokeninfo = JSON.parse(body);
-                        return resolve(tokeninfo);
+                        const userInfo = JSON.parse(body);
+                        return resolve(userInfo);
                     }
                     return reject(body);
                 }
