@@ -20,7 +20,7 @@ module.exports = {
         serve: {
             script: series(
                 'nps banner.serve',
-                'nodemon --watch src --watch .env'
+                'nodemon --watch src --watch .env '
             ),
             description: 'Serves the current app and watches for changes to restart it'
         },
@@ -267,7 +267,7 @@ function copy(source, target) {
 }
 
 function run(path) {
-    return `ts-node ${path}`;
+    return `ts-node  ${path}`;
 }
 
 function runFast(path) {
