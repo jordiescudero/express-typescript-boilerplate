@@ -3562,6 +3562,10 @@ ms@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
+multichain-node@^2.2.0-version1.0.4:
+  version "2.2.0-version1.0.4"
+  resolved "https://registry.yarnpkg.com/multichain-node/-/multichain-node-2.2.0-version1.0.4.tgz#1232dc8fa9a95ce40234362ef1cf9ffde3d15488"
+
 mysql@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/mysql/-/mysql-2.15.0.tgz#ea16841156343e8f2e47fc8985ec41cdd9573b5c"

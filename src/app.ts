@@ -10,6 +10,7 @@ import { graphqlLoader } from './loaders/graphqlLoader';
 import { homeLoader } from './loaders/homeLoader';
 import { iocLoader } from './loaders/iocLoader';
 import { monitorLoader } from './loaders/monitorLoader';
+import { multichainLoader } from './loaders/multichainLoader';
 import { publicLoader } from './loaders/publicLoader';
 import { swaggerLoader } from './loaders/swaggerLoader';
 import { typeormLoader } from './loaders/typeormLoader';
@@ -35,12 +36,14 @@ bootstrapMicroframework({
         iocLoader,
         eventDispatchLoader,
         typeormLoader,
+        multichainLoader,
         expressLoader,
         swaggerLoader,
         monitorLoader,
         homeLoader,
         publicLoader,
         graphqlLoader,
+
     ],
 })
     .then(() => banner(log))

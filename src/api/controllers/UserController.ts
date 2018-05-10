@@ -1,17 +1,18 @@
 import {
-    Authorized, Body, CurrentUser, Delete, Get, JsonController, OnUndefined, Param, Post, Put
+    Body, CurrentUser, Delete, Get, JsonController, OnUndefined, Param, Post, Put
 } from 'routing-controllers';
 
 import { UserNotFoundError } from '../errors/UserNotFoundError';
 import { User } from '../models/User';
+import { MultichainService } from '../services/MultichainService';
 import { UserService } from '../services/UserService';
 
-@Authorized()
 @JsonController('/users')
 export class UserController {
 
     constructor(
-        private userService: UserService
+        private userService: UserService,
+        private multichainService: MultichainService
     ) { }
 
     @Get()
@@ -22,6 +23,7 @@ export class UserController {
     @Get('/:id')
     @OnUndefined(UserNotFoundError)
     public one( @Param('id') id: string): Promise<User | undefined> {
+        this.multichainService.sayHello();
         return this.userService.findOne(id);
     }
 

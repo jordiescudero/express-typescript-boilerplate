@@ -4,17 +4,20 @@ import {
 
 import { PetNotFoundError } from '../errors/PetNotFoundError';
 import { Pet } from '../models/Pet';
+import { MultichainService } from '../services/MultichainService';
 import { PetService } from '../services/PetService';
 
 @JsonController('/pets')
 export class PetController {
 
     constructor(
-        private petService: PetService
+        private petService: PetService,
+        private multichainService: MultichainService
     ) { }
 
     @Get()
     public find(): Promise<Pet[]> {
+        this.multichainService.sayHello();
         return this.petService.find();
     }
 
