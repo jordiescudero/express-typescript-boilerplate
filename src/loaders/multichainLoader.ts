@@ -8,10 +8,10 @@ export const multichainLoader: MicroframeworkLoader = (settings: MicroframeworkS
     if (settings) {
 
         const multichainInstance = multichain({
-            port: 6282,
+            port: 8002,
             host: '127.0.0.1',
             user: 'multichainrpc',
-            pass: 'somepass',
+            pass: 'this-is-insecure-change-it',
         });
         const mcService = Container.get(MultichainService);
         mcService.setInstance(multichainInstance);

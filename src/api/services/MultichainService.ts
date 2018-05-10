@@ -12,7 +12,18 @@ export class MultichainService {
 
      public setInstance(multichainInstance: any): any {  this.multichainInstance = multichainInstance; }
 
-     public sayHello(): void { console.log('hello'); }
+     public sayHello(): void {
+        this.multichainInstance.getAddresses((err, addresses) => {
+            console.log(addresses);
+            this.multichainInstance.issue(
+                {address: addresses[0], asset: {name: 'koko8', open: true}, qty: 50000, units: 0.01, details: {hello: 'world'}},
+                 (err2, res) => {
+                     console.log(res);
+                 });
+        });
+
+        console.log('hello');
+    }
 
      public sayHello2(): void { console.log(this.multichainInstance); }
 
