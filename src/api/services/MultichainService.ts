@@ -15,11 +15,16 @@ export class MultichainService {
      public sayHello(): void {
         this.multichainInstance.getAddresses((err, addresses) => {
             console.log(addresses);
-            this.multichainInstance.issue(
-                {address: addresses[0], asset: {name: 'koko8', open: true}, qty: 50000, units: 0.01, details: {hello: 'world'}},
-                 (err2, res) => {
-                     console.log(res);
-                 });
+            try {
+                this.multichainInstance.issue(
+                    {address: addresses[0], asset: {name: 'koko8', open: true}, qty: 50000, units: 0.01, details: {hello: 'world'}},
+                     (err2, res) => {
+                         console.log(res);
+                     });
+            } catch (error) {
+                console.log(error);
+            }
+
         });
 
         console.log('hello');

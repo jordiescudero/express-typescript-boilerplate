@@ -8,6 +8,8 @@ import { eventDispatchLoader } from './loaders/eventDispatchLoader';
 import { expressLoader } from './loaders/expressLoader';
 import { iocLoader } from './loaders/iocLoader';
 import { multichainLoader } from './loaders/multichainLoader';
+import { scheduleLoader } from './loaders/scheduleLoader';
+import { solrLoader } from './loaders/solrLoader';
 import { swaggerLoader } from './loaders/swaggerLoader';
 import { typeormLoader } from './loaders/typeormLoader';
 import { winstonLoader } from './loaders/winstonLoader';
@@ -16,7 +18,6 @@ import { winstonLoader } from './loaders/winstonLoader';
 // import { homeLoader } from './loaders/homeLoader';
 // import { monitorLoader } from './loaders/monitorLoader';
 // import { publicLoader } from './loaders/publicLoader';
-
 
 /**
  * EXPRESS TYPESCRIPT BOILERPLATE
@@ -39,8 +40,10 @@ bootstrapMicroframework({
         eventDispatchLoader,
         typeormLoader,
         multichainLoader,
+        solrLoader,
         expressLoader,
         swaggerLoader,
+        scheduleLoader,
       //  monitorLoader,
       //  homeLoader,
       //  publicLoader,
