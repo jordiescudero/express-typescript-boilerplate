@@ -32,17 +32,11 @@ bootstrapMicroframework({
         winstonLoader,
         iocLoader,
         eventDispatchLoader,
-      //  typeormLoader,
         multichainLoader,
         solrLoader,
         expressLoader,
         swaggerLoader,
         scheduleLoader,
-      //  monitorLoader,
-      //  homeLoader,
-      //  publicLoader,
-      //  graphqlLoader,
-
     ],
 })
     .then(() => banner(log))
