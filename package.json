@@ -1,7 +1,7 @@
 {
-  "name": "bloomen-api-boilerplate",
+  "name": "bloomen-registry-claim-prototype",
   "version": "0.0.1",
-  "description": "Bloomen api 0.1",
+  "description": "Bloomen Registry/Claim Prototype M12",
   "main": "src/app.ts",
   "scripts": {
     "start": "nps",
