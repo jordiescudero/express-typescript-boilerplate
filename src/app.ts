@@ -8,6 +8,7 @@ import { eventDispatchLoader } from './loaders/eventDispatchLoader';
 import { expressLoader } from './loaders/expressLoader';
 import { iocLoader } from './loaders/iocLoader';
 import { multichainLoader } from './loaders/multichainLoader';
+import { publicLoader } from './loaders/publicLoader';
 import { scheduleLoader } from './loaders/scheduleLoader';
 import { solrLoader } from './loaders/solrLoader';
 import { swaggerLoader } from './loaders/swaggerLoader';
@@ -37,6 +38,7 @@ bootstrapMicroframework({
         expressLoader,
         swaggerLoader,
         scheduleLoader,
+        publicLoader,
     ],
 })
     .then(() => banner(log))

@@ -1,7 +1,7 @@
 {
-  "name": "express-typescript-boilerplate",
-  "version": "3.0.1",
-  "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in TypeScript",
+  "name": "bloomen-api-boilerplate",
+  "version": "0.0.1",
+  "description": "Bloomen api 0.1",
   "main": "src/app.ts",
   "scripts": {
     "start": "nps",
@@ -12,30 +12,6 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "repository": "git+ssh://git@github.com/w3tec/express-typescript-boilerplate.git",
-  "keywords": [
-    "NodeJS",
-    "TypeScript",
-    "express",
-    "boilerplate",
-    "skeleton",
-    "starter-kit",
-    "w3tec.ch"
-  ],
-  "homepage": "https://github.com/w3tec/express-typescript-boilerplate#readme",
-  "author": "w3tec.ch <info@w3tec.ch>",
-  "contributors": [
-    {
-      "name": "David Weber",
-      "email": "david.weber@w3tec.ch",
-      "url": "https://github.com/dweber019"
-    },
-    {
-      "name": "Gery Hirschfeld",
-      "email": "gery.hirschfeld@w3tec.ch",
-      "url": "https://github.com/hirsch88"
-    }
-  ],
   "dependencies": {
     "@types/bluebird": "^3.5.18",
     "@types/body-parser": "^1.16.7",
